@@ -1,0 +1,20 @@
+#! /bin/bash
+
+format="%Y-%m-%d"
+mooddir="$HOME/mood-journal/"
+
+if [[ -z "$1" ]]; then
+  filedate=$(date +$format)
+else
+  filedate=$(date -d "$@" +$format)
+fi
+
+filename="$mooddir$filedate.md"
+
+if [[ ! -f "$filename" ]]; then
+  cp template.md "$filename"
+  sed "s/date:/date: $filedate/g" -i $filename
+fi
+
+$EDITOR "$filename"
+
