@@ -15,9 +15,13 @@ A mood journal is just a plain text with some metadata. Metadata is stored as ya
 
 ```bash
 mood [some-date]
+
+mood tree
 ```
 
 Where `some-date` is a date that can be understood by [`date(1)`](https://man7.org/linux/man-pages/man1/date.1.html)
+
+`mood tree` prints all journal entries
 
 ## Ideas
 
@@ -35,5 +39,4 @@ PRs are appreciated
 
 - Encrypting journal
 - pandoc templates
-
 

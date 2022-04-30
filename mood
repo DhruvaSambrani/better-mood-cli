@@ -3,6 +3,10 @@
 format="%Y-%m-%d"
 mooddir="$HOME/mood-journal/"
 
+if [[ "$1" = "tree" ]]; then
+    lsd --tree $mooddir
+    exit
+fi
 if [[ -z "$1" ]]; then
     filedate=$(date +$format)
 else
