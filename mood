@@ -4,16 +4,16 @@ format="%Y-%m-%d"
 mooddir="$HOME/mood-journal/"
 
 if [[ -z "$1" ]]; then
-  filedate=$(date +$format)
+    filedate=$(date +$format)
 else
-  filedate=$(date -d "$@" +$format)
+    filedate=$(date -d "$@" +$format)
 fi
 
 filename="$mooddir$filedate.md"
 
 if [[ ! -f "$filename" ]]; then
-  cp template.md "$filename"
-  sed "s/date:/date: $filedate/g" -i $filename
+    cp Templates/mood-journal-template.md "$filename"
+    sed "s/date:/date: $filedate/g" -i $filename
 fi
 
 $EDITOR "$filename"
