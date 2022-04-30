@@ -12,7 +12,7 @@ fi
 filename="$mooddir$filedate.md"
 
 if [[ ! -f "$filename" ]]; then
-    cp Templates/mood-journal-template.md "$filename"
+    cp ~/Templates/mood-journal-template.md "$filename"
     sed "s/date:/date: $filedate/g" -i $filename
 fi
 
